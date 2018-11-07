@@ -192,7 +192,7 @@ class NetBoxScanner(object):
 
         for s in self.stats:
             self.stats[s] = 0
-        parsing = self.parser([f'{h[0]}/32' for h in hosts])
+        parsing = self.parser(['{}/32'.format(h[0]) for h in hosts])
         if parsing:
             self.logger('mistyped', badnets=parsing)
             return False
